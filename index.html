@@ -1,1 +1,620 @@
-<!DOCTYPE html><html lang="uk"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Підтримка для Вас</title>    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">    <style>        :root {            --primary-color: #6a11cb;            --secondary-color: #2575fc;            --text-color: #333;            --card-bg: rgba(255, 255, 255, 0.9);        }        * {            margin: 0;            padding: 0;            box-sizing: border-box;        }        body {            font-family: 'Montserrat', sans-serif;            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);            min-height: 100vh;            display: flex;            justify-content: center;            align-items: center;            padding: 20px;            color: var(--text-color);        }        .container {            max-width: 1200px;            width: 100%;            margin: 0 auto;        }        header {            text-align: center;            margin-bottom: 50px;            animation: fadeInDown 1s ease-out;            background: rgba(255, 255, 255, 0.6);            backdrop-filter: blur(10px);            padding: 40px;            border-radius: 20px;            box-shadow: 0 10px 30px rgba(0,0,0,0.1);        }        h1 {            font-size: 2rem;            margin-bottom: 15px;            color: #4a4a4a;        }        p.subtitle {            font-size: 1.1rem;            line-height: 1.6;            color: #555;            max-width: 800px;            margin: 0 auto;        }        .grid {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));            gap: 25px;        }        .card {            background: var(--card-bg);            padding: 30px;            border-radius: 15px;            box-shadow: 0 5px 15px rgba(0,0,0,0.05);            transition: transform 0.3s ease, box-shadow 0.3s ease;            opacity: 0; /* Приховано для анімації */            animation: fadeInUp 0.8s ease-out forwards;            border-left: 5px solid #a18cd1;        }        .card:hover {            transform: translateY(-10px);            box-shadow: 0 15px 30px rgba(0,0,0,0.15);        }        .card-name {            font-size: 1.2rem;            font-weight: 700;            margin-bottom: 15px;            color: #4834d4;            display: flex;            align-items: center;            gap: 10px;        }        .card-name::before {            content: '??';            font-size: 1rem;        }        .card-text {            font-size: 1rem;            line-height: 1.5;            color: #444;            font-style: italic;        }        /* Анімації */        @keyframes fadeInDown {            from {                opacity: 0;                transform: translateY(-30px);            }            to {                opacity: 1;                transform: translateY(0);            }        }        @keyframes fadeInUp {            from {                opacity: 0;                transform: translateY(30px);            }            to {                opacity: 1;                transform: translateY(0);            }        }        /* Затримка анімації для кожної картки */        .card:nth-child(1) { animation-delay: 0.2s; }        .card:nth-child(2) { animation-delay: 0.4s; }        .card:nth-child(3) { animation-delay: 0.6s; }        .card:nth-child(4) { animation-delay: 0.8s; }        .card:nth-child(5) { animation-delay: 1.0s; }        .card:nth-child(6) { animation-delay: 1.2s; }        /* Мобільна адаптація */        @media (max-width: 600px) {            header {                padding: 20px;                margin-bottom: 30px;            }            h1 {                font-size: 1.5rem;            }            p.subtitle {                font-size: 0.95rem;            }            .grid {                grid-template-columns: 1fr;            }        }    </style></head><body>    <div class="container">        <header>            <h1>Ми з Вами!</h1>            <p class="subtitle">                Ми чули про неприємну ситуацію, яка вас образила. Невеликою компанією ми хотіли підтримати Вас і нагадати, що ми Вас цінуємо. Ось декілька теплих слів від нас:            </p>        </header>        <div class="grid">            <div class="card">                <div class="card-name">Авдосьєв Ілля</div>                <div class="card-text">                    "Дякую за терпіння та знання, бажаю вам міцного здоров’я, добробуту та якомога менше приводів для стресу"                </div>            </div>            <div class="card">                <div class="card-name">Кушнір Таїсія</div>                <div class="card-text">                    "Дякую вам за вашу працю, терпіння до нас, ви як 2 мама, і виховати і приголубити."                </div>            </div>            <div class="card">                <div class="card-name">Лукша Станіслав</div>                <div class="card-text">                    "Бажаю вам міцного здоров’я і сильних нервів, щоб поруч були тільки приємні люди. Дякую вам за те, що ділитесь з нами знаннями — це справді цінно?"                </div>            </div>            <div class="card">                <div class="card-name">Рильцов Вiталiй</div>                <div class="card-text">                    "Дякую за вашу доброту та турботу, за те, що намагаєтесь навчити нас чогось розумного в цьому житті"                </div>            </div>            <div class="card">                <div class="card-name">Тертерян Артур</div>                <div class="card-text">                    "Бажаю щоб вам дали дозвіл бити і матюкати неслухняних студентів, аби було легше на душі :)"                </div>            </div>            <div class="card">                <div class="card-name">Чекалюк Дмитро</div>                <div class="card-text">                    "Бажаю вам крепкого здоров'я, розуміючих студентів, стальні нерви, здійснення мрій і більше годин сну"                </div>            </div>        </div>    </div></body></html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РџС–РґС‚СЂРёРјРєР° РґР»СЏ Р’Р°СЃ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* РћСЃРЅРѕРІРЅС– РєРѕР»СЊРѕСЂРё РґР»СЏ РіСЂР°РґС–С”РЅС‚Сѓ */
+            --color-1: #FF9A8B;
+            --color-2: #FF6A88;
+            --color-3: #FF99AC;
+            --color-4: #a18cd1;
+            --color-5: #fbc2eb;
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --text-dark: #2d3436;
+            --accent-color: #6c5ce7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* РђРЅС–РјРѕРІР°РЅРёР№ Р¶РёРІРёР№ С„РѕРЅ */
+            background: linear-gradient(-45deg, var(--color-1), var(--color-2), var(--color-4), var(--color-5));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* РђРЅС–РјР°С†С–СЏ С„РѕРЅСѓ */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* РЎС‚РёР»СЊ Р·Р°РіРѕР»РѕРІРєР° */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            /* Р•С„РµРєС‚ РјР°С‚РѕРІРѕРіРѕ СЃРєР»Р° */
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 50px 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: bounceInDown 1s both;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent-color), #ff7675);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        /* РЎС–С‚РєР° РґР»СЏ РєР°СЂС‚РѕРє */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            perspective: 1000px; /* Р”Р»СЏ 3D РµС„РµРєС‚Сѓ */
+        }
+
+        /* РЎС‚РёР»СЊ РєР°СЂС‚РєРё */
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 25px;
+            /* Р‘С–Р»СЊС€ РіР»РёР±РѕРєР° С‚С–РЅСЊ */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            /* РџСЂРёС…РѕРІР°РЅРѕ РґРѕ РїРѕС‡Р°С‚РєСѓ Р°РЅС–РјР°С†С–С— */
+            opacity: 0; 
+            animation: popIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            /* Р’Р°Р¶Р»РёРІРѕ РґР»СЏ 3D СЃРєСЂРёРїС‚Р°: */
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+
+        /* Р’РЅСѓС‚СЂС–С€РЅС–Р№ РєРѕРЅС‚РµРЅС‚ РєР°СЂС‚РєРё, С‰РѕР± РІС–РЅ С‚СЂРѕС…Рё "РІРёРїРёСЂР°РІ" Сѓ 3D */
+        .card-content {
+            transform: translateZ(30px); /* Р’РёС€С‚РѕРІС…СѓС”РјРѕ РєРѕРЅС‚РµРЅС‚ РІРїРµСЂРµРґ */
+        }
+
+        .card-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-name::before {
+            content: 'вќ¤пёЏ';
+            font-size: 1.2rem;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+            animation: pulseHeart 2s infinite;
+        }
+
+        @keyframes pulseHeart {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .card-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #444;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .card-text::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            color: rgba(108, 92, 231, 0.1);
+            font-family: serif;
+        }
+
+        /* РђРЅС–РјР°С†С–С— РїРѕСЏРІРё */
+        @keyframes bounceInDown {
+            0% { opacity: 0; transform: translateY(-200px); }
+            60% { opacity: 1; transform: translateY(30px); }
+            80% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.5) translateY(100px); }
+            70% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Р—Р°С‚СЂРёРјРєРё РґР»СЏ РєР°СЂС‚РѕРє (Stagger effect) */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+        .card:nth-child(5) { animation-delay: 1.0s; }
+        .card:nth-child(6) { animation-delay: 1.2s; }
+
+        /* РђРґР°РїС‚РёРІРЅС–СЃС‚СЊ */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+                margin-bottom: 40px;
+            }
+            h1 { font-size: 1.8rem; }
+            p.subtitle { font-size: 1rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>РњРё Р· Р’Р°РјРё!</h1>
+            <p class="subtitle">
+                РњРё С‡СѓР»Рё РїСЂРѕ РЅРµРїСЂРёС”РјРЅСѓ СЃРёС‚СѓР°С†С–СЋ, СЏРєР° РІР°СЃ РѕР±СЂР°Р·РёР»Р°. РќРµРІРµР»РёРєРѕСЋ РєРѕРјРїР°РЅС–С”СЋ РјРё С…РѕС‚С–Р»Рё РїС–РґС‚СЂРёРјР°С‚Рё Р’Р°СЃ С– РЅР°РіР°РґР°С‚Рё, С‰Рѕ РјРё Р’Р°СЃ С†С–РЅСѓС”РјРѕ. РћСЃСЊ РґРµРєС–Р»СЊРєР° С‚РµРїР»РёС… СЃР»С–РІ РІС–Рґ РЅР°СЃ:
+            </p>
+        </header>
+
+        <div class="grid">
+            <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="card-content">
+                    <div class="card-name">РђРІРґРѕСЃСЊС”РІ Р†Р»Р»СЏ</div>
+                    <div class="card-text">
+                        "Р”СЏРєСѓСЋ Р·Р° С‚РµСЂРїС–РЅРЅСЏ С‚Р° Р·РЅР°РЅРЅСЏ, Р±Р°Р¶Р°СЋ РІР°Рј РјС–С†РЅРѕРіРѕ Р·РґРѕСЂРѕРІвЂ™СЏ, РґРѕР±СЂРѕР±СѓС‚Сѓ С‚Р° СЏРєРѕРјРѕРіР° РјРµРЅС€Рµ РїСЂРёРІРѕРґС–РІ РґР»СЏ СЃС‚СЂРµСЃСѓ"
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="card-content">
+                    <div class="card-name">РљСѓС€РЅС–СЂ РўР°С—СЃС–СЏ</div>
+                    <div class="card-text">
+                        "Р”СЏРєСѓСЋ РІР°Рј Р·Р° РІР°С€Сѓ РїСЂР°С†СЋ, С‚РµСЂРїС–РЅРЅСЏ РґРѕ РЅР°СЃ, РІРё СЏРє 2 РјР°РјР°, С– РІРёС…РѕРІР°С‚Рё С– РїСЂРёРіРѕР»СѓР±РёС‚Рё."
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="card-content">
+                    <div class="card-name">Р›СѓРєС€Р° РЎС‚Р°РЅС–СЃР»Р°РІ</div>
+                    <div class="card-text">
+                        "Р‘Р°Р¶Р°СЋ РІР°Рј РјС–С†РЅРѕРіРѕ Р·РґРѕСЂРѕРІвЂ™СЏ С– СЃРёР»СЊРЅРёС… РЅРµСЂРІС–РІ, С‰РѕР± РїРѕСЂСѓС‡ Р±СѓР»Рё С‚С–Р»СЊРєРё РїСЂРёС”РјРЅС– Р»СЋРґРё. Р”СЏРєСѓСЋ РІР°Рј Р·Р° С‚Рµ, С‰Рѕ РґС–Р»РёС‚РµСЃСЊ Р· РЅР°РјРё Р·РЅР°РЅРЅСЏРјРё вЂ” С†Рµ СЃРїСЂР°РІРґС– С†С–РЅРЅРѕв™Ў"
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="card-content">
+                    <div class="card-name">Р РёР»СЊС†РѕРІ Р’iС‚Р°Р»iР№</div>
+                    <div class="card-text">
+                        "Р”СЏРєСѓСЋ Р·Р° РІР°С€Сѓ РґРѕР±СЂРѕС‚Сѓ С‚Р° С‚СѓСЂР±РѕС‚Сѓ, Р·Р° С‚Рµ, С‰Рѕ РЅР°РјР°РіР°С”С‚РµСЃСЊ РЅР°РІС‡РёС‚Рё РЅР°СЃ С‡РѕРіРѕСЃСЊ СЂРѕР·СѓРјРЅРѕРіРѕ РІ С†СЊРѕРјСѓ Р¶РёС‚С‚С–"
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="card-content">
+                    <div class="card-name">РўРµСЂС‚РµСЂСЏРЅ РђСЂС‚СѓСЂ</div>
+                    <div class="card-text">
+                        "Р‘Р°Р¶Р°СЋ С‰РѕР± РІР°Рј РґР°Р»Рё РґРѕР·РІС–Р» Р±РёС‚Рё С– РјР°С‚СЋРєР°С‚Рё РЅРµСЃР»СѓС…РЅСЏРЅРёС… СЃС‚СѓРґРµРЅС‚С–РІ, Р°Р±Рё Р±СѓР»Рѕ Р»РµРіС€Рµ РЅР° РґСѓС€С– :)"
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                <div class="card-content">
+                    <div class="card-name">Р§РµРєР°Р»СЋРє Р”РјРёС‚СЂРѕ</div>
+                    <div class="card-text">
+                        "Р‘Р°Р¶Р°СЋ РІР°Рј РєСЂРµРїРєРѕРіРѕ Р·РґРѕСЂРѕРІ'СЏ, СЂРѕР·СѓРјС–СЋС‡РёС… СЃС‚СѓРґРµРЅС‚С–РІ, СЃС‚Р°Р»СЊРЅС– РЅРµСЂРІРё, Р·РґС–Р№СЃРЅРµРЅРЅСЏ РјСЂС–Р№ С– Р±С–Р»СЊС€Рµ РіРѕРґРёРЅ СЃРЅСѓ"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var VanillaTilt = (function () {
+        'use strict';
+        var classCallCheck = function (instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+                throw new TypeError("Cannot call a class as a function");
+            }
+        };
+        var VanillaTilt = function () {
+            function VanillaTilt(element) {
+                var settings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                classCallCheck(this, VanillaTilt);
+                if (!(element instanceof Node)) {
+                    throw new ("Can't initialize VanillaTilt because " + element + " is not a Node.");
+                }
+                this.width = null;
+                this.height = null;
+                this.clientWidth = null;
+                this.clientHeight = null;
+                this.left = null;
+                this.top = null;
+                this.gammazero = null;
+                this.betazero = null;
+                this.lastgammazero = null;
+                this.lastbetazero = null;
+                this.transitionTimeout = null;
+                this.updateCall = null;
+                this.event = null;
+                this.updateBind = this.update.bind(this);
+                this.resetBind = this.reset.bind(this);
+                this.element = element;
+                this.settings = this.extendSettings(settings);
+                this.reverse = this.settings.reverse ? -1 : 1;
+                this.glare = VanillaTilt.isSettingTrue(this.settings.glare);
+                this.glarePrerender = VanillaTilt.isSettingTrue(this.settings["glare-prerender"]);
+                this.fullPageListening = VanillaTilt.isSettingTrue(this.settings["full-page-listening"]);
+                this.gyroscope = VanillaTilt.isSettingTrue(this.settings.gyroscope);
+                this.gyroscopeSamples = this.settings.gyroscopeSamples;
+                this.elementListener = this.getElementListener();
+                if (this.glare) {
+                    this.prepareGlare();
+                }
+                if (this.fullPageListening) {
+                    this.updateClientSize();
+                }
+                this.addEventListeners();
+                this.reset();
+                this.updateInitialPosition();
+            }
+            VanillaTilt.prototype.isSettingTrue = function isSettingTrue(setting) {
+                return setting === "" || setting === true || setting === 1;
+            };
+            VanillaTilt.prototype.getElementListener = function getElementListener() {
+                if (this.fullPageListening) {
+                    return window.document;
+                }
+                if (typeof this.settings["mouse-event-element"] === "string") {
+                    var mouseEventElement = document.querySelector(this.settings["mouse-event-element"]);
+                    if (mouseEventElement) {
+                        return mouseEventElement;
+                    }
+                }
+                if (this.settings["mouse-event-element"] instanceof Node) {
+                    return this.settings["mouse-event-element"];
+                }
+                return this.element;
+            };
+            VanillaTilt.prototype.addEventListeners = function addEventListeners() {
+                this.onMouseEnterBind = this.onMouseEnter.bind(this);
+                this.onMouseMoveBind = this.onMouseMove.bind(this);
+                this.onMouseLeaveBind = this.onMouseLeave.bind(this);
+                this.onWindowResizeBind = this.onWindowResize.bind(this);
+                this.onDeviceOrientationBind = this.onDeviceOrientation.bind(this);
+                this.elementListener.addEventListener("mouseenter", this.onMouseEnterBind);
+                this.elementListener.addEventListener("mouseleave", this.onMouseLeaveBind);
+                this.elementListener.addEventListener("mousemove", this.onMouseMoveBind);
+                if (this.glare || this.fullPageListening) {
+                    window.addEventListener("resize", this.onWindowResizeBind);
+                }
+                if (this.gyroscope) {
+                    window.addEventListener("deviceorientation", this.onDeviceOrientationBind);
+                }
+            };
+            VanillaTilt.prototype.removeEventListeners = function removeEventListeners() {
+                this.elementListener.removeEventListener("mouseenter", this.onMouseEnterBind);
+                this.elementListener.removeEventListener("mouseleave", this.onMouseLeaveBind);
+                this.elementListener.removeEventListener("mousemove", this.onMouseMoveBind);
+                if (this.gyroscope) {
+                    window.removeEventListener("deviceorientation", this.onDeviceOrientationBind);
+                }
+                if (this.glare || this.fullPageListening) {
+                    window.removeEventListener("resize", this.onWindowResizeBind);
+                }
+            };
+            VanillaTilt.prototype.destroy = function destroy() {
+                clearTimeout(this.transitionTimeout);
+                if (this.updateCall !== null) {
+                    cancelAnimationFrame(this.updateCall);
+                }
+                this.reset();
+                this.removeEventListeners();
+                this.element.vanillaTilt = null;
+                delete this.element.vanillaTilt;
+                this.element = null;
+            };
+            VanillaTilt.prototype.onDeviceOrientation = function onDeviceOrientation(event) {
+                if (event.gamma === null || event.beta === null) {
+                    return;
+                }
+                this.updateElementPosition();
+                if (this.gyroscopeSamples > 0) {
+                    this.lastgammazero = this.gammazero;
+                    this.lastbetazero = this.betazero;
+                    if (this.gammazero === null) {
+                        this.gammazero = event.gamma;
+                        this.betazero = event.beta;
+                    } else {
+                        this.gammazero = (event.gamma + this.lastgammazero) / 2;
+                        this.betazero = (event.beta + this.lastbetazero) / 2;
+                    }
+                    this.gyroscopeSamples -= 1;
+                }
+                var totalAngleX = this.settings.gyroscopeMaxAngleX - this.settings.gyroscopeMinAngleX;
+                var totalAngleY = this.settings.gyroscopeMaxAngleY - this.settings.gyroscopeMinAngleY;
+                var degreesPerPixelX = totalAngleX / this.width;
+                var degreesPerPixelY = totalAngleY / this.height;
+                var angleX = event.gamma - (this.settings.gyroscopeMinAngleX + this.gammazero);
+                var angleY = event.beta - (this.settings.gyroscopeMinAngleY + this.betazero);
+                var posX = angleX / degreesPerPixelX;
+                var posY = angleY / degreesPerPixelY;
+                if (this.updateCall !== null) {
+                    cancelAnimationFrame(this.updateCall);
+                }
+                this.event = {
+                    clientX: posX + this.left,
+                    clientY: posY + this.top,
+                };
+                this.updateCall = requestAnimationFrame(this.updateBind);
+            };
+            VanillaTilt.prototype.onMouseEnter = function onMouseEnter() {
+                this.updateElementPosition();
+                this.element.style.willChange = "transform";
+                this.setTransition();
+            };
+            VanillaTilt.prototype.onMouseMove = function onMouseMove(event) {
+                if (this.updateCall !== null) {
+                    cancelAnimationFrame(this.updateCall);
+                }
+                this.event = event;
+                this.updateCall = requestAnimationFrame(this.updateBind);
+            };
+            VanillaTilt.prototype.onMouseLeave = function onMouseLeave() {
+                this.setTransition();
+                if (this.settings.reset) {
+                    requestAnimationFrame(this.resetBind);
+                }
+            };
+            VanillaTilt.prototype.reset = function reset() {
+                this.event = {
+                    clientX: this.left + this.width / 2,
+                    clientY: this.top + this.height / 2
+                };
+                if (this.element && this.element.style) {
+                    this.element.style.transform = "perspective(" + this.settings.perspective + "px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                }
+                this.resetGlare();
+            };
+            VanillaTilt.prototype.resetGlare = function resetGlare() {
+                if (this.glare) {
+                    this.glareElement.style.transform = "rotate(180deg) translate(-50%, -50%)";
+                    this.glareElement.style.opacity = "0";
+                }
+            };
+            VanillaTilt.prototype.updateInitialPosition = function updateInitialPosition() {
+                if (this.settings.startX === 0 && this.settings.startY === 0) {
+                    return;
+                }
+                this.onMouseMove({
+                    clientX: this.left + this.width / 2 + this.settings.startX,
+                    clientY: this.top + this.height / 2 + this.settings.startY
+                });
+                if (this.settings.reset) {
+                    this.onMouseLeave();
+                }
+            };
+            VanillaTilt.prototype.update = function update() {
+                var values = this.getValues();
+                this.element.style.transform = "perspective(" + this.settings.perspective + "px) rotateX(" + (this.reverse * values.tiltY) + "deg) rotateY(" + (this.reverse * values.tiltX) + "deg) scale3d(" + this.settings.scale + ", " + this.settings.scale + ", " + this.settings.scale + ")";
+                if (this.glare) {
+                    this.glareElement.style.transform = "rotate(" + values.angle + "deg) translate(-50%, -50%)";
+                    this.glareElement.style.opacity = "" + values.percentageY * this.settings["max-glare"];
+                }
+                this.element.dispatchEvent(new CustomEvent("tiltChange", {
+                    "detail": values
+                }));
+                this.updateCall = null;
+            };
+            VanillaTilt.prototype.updateElementPosition = function updateElementPosition() {
+                var rect = this.element.getBoundingClientRect();
+                this.width = this.element.offsetWidth;
+                this.height = this.element.offsetHeight;
+                this.left = rect.left;
+                this.top = rect.top;
+            };
+            VanillaTilt.prototype.updateClientSize = function updateClientSize() {
+                this.clientWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                this.clientHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            };
+            VanillaTilt.prototype.onWindowResize = function onWindowResize() {
+                this.updateClientSize();
+                this.updateElementPosition();
+            };
+            VanillaTilt.prototype.getValues = function getValues() {
+                var x = void 0,
+                    y = void 0;
+                if (this.fullPageListening) {
+                    x = this.event.clientX / this.clientWidth;
+                    y = this.event.clientY / this.clientHeight;
+                } else {
+                    x = (this.event.clientX - this.left) / this.width;
+                    y = (this.event.clientY - this.top) / this.height;
+                }
+                x = Math.min(Math.max(x, 0), 1);
+                y = Math.min(Math.max(y, 0), 1);
+                var tiltX = (this.settings.max / 2 - x * this.settings.max).toFixed(2);
+                var tiltY = (y * this.settings.max - this.settings.max / 2).toFixed(2);
+                var angle = Math.atan2(x - 0.5, 0.5 - y) * (180 / Math.PI);
+                return {
+                    tiltX: tiltX,
+                    tiltY: tiltY,
+                    percentageX: x * 100,
+                    percentageY: y * 100,
+                    angle: angle
+                };
+            };
+            VanillaTilt.prototype.extendSettings = function extendSettings(settings) {
+                var defaultSettings = {
+                    reverse: false,
+                    max: 15,
+                    startX: 0,
+                    startY: 0,
+                    perspective: 1000,
+                    easing: "cubic-bezier(.03,.98,.52,.99)",
+                    scale: 1,
+                    speed: 300,
+                    transition: true,
+                    axis: null,
+                    glare: false,
+                    "max-glare": 1,
+                    "glare-prerender": false,
+                    "full-page-listening": false,
+                    "mouse-event-element": null,
+                    reset: true,
+                    gyroscope: true,
+                    gyroscopeMinAngleX: -45,
+                    gyroscopeMaxAngleX: 45,
+                    gyroscopeMinAngleY: -45,
+                    gyroscopeMaxAngleY: 45,
+                    gyroscopeSamples: 10
+                };
+                var newSettings = {};
+                for (var property in defaultSettings) {
+                    if (property in settings) {
+                        newSettings[property] = settings[property];
+                    } else if (this.element.hasAttribute("data-tilt-" + property)) {
+                        var attribute = this.element.getAttribute("data-tilt-" + property);
+                        try {
+                            newSettings[property] = JSON.parse(attribute);
+                        } catch (e) {
+                            newSettings[property] = attribute;
+                        }
+                    } else {
+                        newSettings[property] = defaultSettings[property];
+                    }
+                }
+                return newSettings;
+            };
+            VanillaTilt.prototype.prepareGlare = function prepareGlare() {
+                if (!this.glarePrerender) {
+                    var jsTiltGlare = document.createElement("div");
+                    jsTiltGlare.classList.add("js-tilt-glare");
+                    var jsTiltGlareInner = document.createElement("div");
+                    jsTiltGlareInner.classList.add("js-tilt-glare-inner");
+                    jsTiltGlare.appendChild(jsTiltGlareInner);
+                    this.element.appendChild(jsTiltGlare);
+                }
+                this.glareElementWrapper = this.element.querySelector(".js-tilt-glare");
+                this.glareElement = this.element.querySelector(".js-tilt-glare-inner");
+                if (this.glarePrerender) {
+                    return;
+                }
+                Object.assign(this.glareElementWrapper.style, {
+                    "position": "absolute",
+                    "top": "0",
+                    "left": "0",
+                    "width": "100%",
+                    "height": "100%",
+                    "overflow": "hidden",
+                    "pointer-events": "none",
+                    "border-radius": "inherit"
+                });
+                Object.assign(this.glareElement.style, {
+                    "position": "absolute",
+                    "top": "50%",
+                    "left": "50%",
+                    "pointer-events": "none",
+                    "background-image": "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)",
+                    "width": "" + this.element.offsetWidth * 2 + "px",
+                    "height": "" + this.element.offsetWidth * 2 + "px",
+                    "transform": "rotate(180deg) translate(-50%, -50%)",
+                    "transform-origin": "0% 0%",
+                    "opacity": "0"
+                });
+            };
+            VanillaTilt.prototype.setTransition = function setTransition() {
+                var _this = this;
+                clearTimeout(this.transitionTimeout);
+                this.element.style.transition = this.settings.speed + "ms " + this.settings.easing;
+                if (this.glare) {
+                    this.glareElement.style.transition = "opacity " + this.settings.speed + "ms " + this.settings.easing;
+                }
+                this.transitionTimeout = setTimeout(function () {
+                    _this.element.style.transition = "";
+                    if (_this.glare) {
+                        _this.glareElement.style.transition = "";
+                    }
+                }, this.settings.speed);
+            };
+            return VanillaTilt;
+        }();
+        if (typeof document !== "undefined") {
+            window.VanillaTilt = VanillaTilt;
+            VanillaTilt.init = function (elements, settings) {
+                if (elements instanceof Node) {
+                    elements = [elements];
+                }
+                if (elements instanceof NodeList) {
+                    elements = [].slice.call(elements);
+                }
+                if (!(elements instanceof Array)) {
+                    return;
+                }
+                elements.forEach(function (element) {
+                    if (!("vanillaTilt" in element)) {
+                        element.vanillaTilt = new VanillaTilt(element, settings);
+                    }
+                });
+            };
+        }
+        return VanillaTilt;
+        }());
+        
+        // Р†РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ СЃРєСЂРёРїС‚Р°
+        VanillaTilt.init(document.querySelectorAll(".card"));
+    </script>
+</body>
+</html>
